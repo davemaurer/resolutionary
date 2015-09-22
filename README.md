@@ -1,6 +1,6 @@
 ## Resolutionary
 
-{<img alt='Stories in Ready' src='https://badge.waffle.io/davemaurer/resolutionary.png?label=ready&title=Ready' />}[https://waffle.io/davemaurer/resolutionary]
++{<img alt='Stories in Ready' src='https://badge.waffle.io/davemaurer/resolutionary.png?label=ready&title=Ready' />}[https://waffle.io/davemaurer/resolutionary]
 
 ---
 

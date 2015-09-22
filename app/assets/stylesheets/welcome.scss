@@ -1,3 +1,64 @@
-// Place all the styles related to the Welcome controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+@mixin vertical-align {
+  position: relative;
+  top: 45%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+$gradient: linear-gradient(45deg, white, yellow);
+$gradient2: linear-gradient(45deg, orange, red);
+
+.hero {
+  //background: asset-data-url("#") no-repeat center center;
+  //background-size: cover;
+  height: 85vh;
+  overflow: hidden;
+  .title {
+    font-size: 3.5rem;
+    line-height: 2.0em;
+    font-weight: 500;
+    color: darkcyan;
+    @include vertical-align;
+  }
+  .title-small {
+    font-size: 1.5rem;
+    line-height: 1.0em;
+    font-weight: 200;
+    color: lightseagreen;
+    @include vertical-align;
+  }
+  h1 {
+    text-align: center;
+    @include vertical-align;
+  }
+}
+
+.hero:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-image: linear-gradient(to bottom right, lightblue, chartreuse);
+  opacity: .5;
+}
+
+.footer {
+  text-align: center;
+  font-size: 1.2rem;
+  padding: 3rem;
+  p {
+    &.slogan {
+      color: #8d9093;
+      font-size: 1.8rem;
+      margin: 0 0 1rem;
+    }
+    &.copywrite {
+      color: #8f9296;
+      font-size: 0.875rem;
+      margin: 0;
+    }
+  }
+}

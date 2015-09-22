@@ -3,9 +3,9 @@ Rails.application.routes.draw do
 
   get '/auth/twitter', as: :login
 
-  get '/logout', as: :logout, to: 'sessions#destroy'
-
   get '/auth/twitter/callback', to: 'sessions#create'
+
+  get '/logout', as: :logout, to: 'sessions#destroy'
 
   resources :users, except: [:destroy]
 end
