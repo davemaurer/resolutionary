@@ -50,13 +50,13 @@
 
     <!-- Feed Entry -->
     <div class="row">
-      <% current_user.resolutions.each do |resolution| %>
+      <% current_user.resolutions.reverse.each do |resolution| %>
       <div class="large-2 columns small-3"><img src=<%= resolution.motive_image %>></div>
       <div class="large-10 columns">
         <ul>
-           <li><%= resolution.title %>
-           <%= resolution.description %></li>
-          </ul>
+           <li><%= resolution.title %></li>
+           <li><%= resolution.description %></li>
+        </ul>
           <ul class="inline-list">
             <li><%= link_to "Edit", edit_resolution_path(resolution) %></a></li>
             <li><a href="">Share</a></li>
@@ -81,18 +81,13 @@
       <% end %>
     </div>
     <!-- End Feed Entry -->
-
-    <hr/>
-
-
-
   </div>
 
   <!-- Right Sidebar -->
   <!-- On small devices this column is hidden -->
   <aside class="large-3 columns hide-for-small">
     <ol>
-      <% current_user.twitter_timeline.each do |tweet| %>
+      <% current_user.inspirational_tweets.each do |tweet| %>
         <li><%= tweet.text %></li>
       <% end %>
     </ol>

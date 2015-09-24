@@ -1,0 +1,6 @@
+<%= render "partials/topbar" %>
+
+<div class="hero-profile">
+  <h2>Hello, <%= current_user.name %></h2>
+  <%= image_tag src=current_user.profile_image, size: "110x110", class: "img-circle img-thumbnail", alt: "Awesome Pic!" %>
+</div>

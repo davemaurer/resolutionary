@@ -1,3 +1,21 @@
-// Place all the styles related to the Users controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.hero-profile {
+  background: asset-data-url("inspiration-profile-2.jpg") no-repeat center center;
+  background-size: cover;
+  height: 100%;
+  overflow: hidden;
+}
+
+.hero-profile:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-image: linear-gradient(to bottom, blue, darkblue);
+  opacity: .3;
+}
+
+h2 {
+  color: white;
+}
