@@ -1,6 +1,6 @@
 @mixin vertical-align {
   position: relative;
-  top: 45%;
+  top: 60%;
   -webkit-transform: translateY(-50%);
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
@@ -8,31 +8,63 @@
 
 $gradient: linear-gradient(45deg, white, yellow);
 $gradient2: linear-gradient(45deg, orange, red);
+$twitter-color: #55acee;
+$text-transform: uppercase;
+$icon-size: 2rem;
 
 .hero {
-  //background: asset-data-url("#") no-repeat center center;
-  //background-size: cover;
-  height: 85vh;
+  background: asset-data-url("resolution-1.jpg") no-repeat center center;
+  background-size: cover;
+  height: 60vh;
   overflow: hidden;
   .title {
     font-size: 3.5rem;
     line-height: 2.0em;
     font-weight: 500;
-    color: darkcyan;
+    color: white;
     @include vertical-align;
   }
   .title-small {
     font-size: 1.5rem;
     line-height: 1.0em;
     font-weight: 200;
-    color: lightseagreen;
+    color: white;
     @include vertical-align;
   }
   h1 {
     text-align: center;
     @include vertical-align;
+
+    &.split.button {
+      width: 100%;
+
+      &.twitter {
+        background: $twitter-color;
+        text-transform: $text-transform;
+
+        span {
+          background: darken($twitter-color, 10%);
+
+          &:after {
+            border: none;
+            font-family: "foundation-icons";
+            content: "\f1e4";
+            font-size: $icon-size;
+            line-height: 0.25rem;
+            margin-left: -0.7rem;
+          }
+        }
+      }
+      &.left-icon {
+        text-align: right;
+        span {
+          left: 0;
+        }
+      }
+    }
   }
 }
+
 
 .hero:before {
   content: '';
@@ -41,14 +73,15 @@ $gradient2: linear-gradient(45deg, orange, red);
   right: 0;
   bottom: 0;
   left: 0;
-  background-image: linear-gradient(to bottom right, lightblue, chartreuse);
-  opacity: .5;
+  background-image: linear-gradient(to bottom, deepskyblue, darkblue);
+  opacity: .6;
 }
 
 .footer {
+  background-color: #292c2f;
   text-align: center;
   font-size: 1.2rem;
-  padding: 3rem;
+  padding: 2rem;
   p {
     &.slogan {
       color: #8d9093;
@@ -61,4 +94,23 @@ $gradient2: linear-gradient(45deg, orange, red);
       margin: 0;
     }
   }
+  .links a {
+    list-style: none;
+    font-weight: bold;
+    color: #ffffff;
+    padding: 3rem 0 2rem;
+    margin: 0;
+    &::after {
+      content: "•";
+      padding: 0 0.4rem 0 0.8rem;
+    }
+    &:last-child::after {
+      content: "";
+      padding: 0 0.4rem 0 0.8rem;
+    }
+  }
 }
+
+
+
+

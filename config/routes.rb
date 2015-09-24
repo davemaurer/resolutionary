@@ -7,5 +7,11 @@ Rails.application.routes.draw do
 
   get '/logout', as: :logout, to: 'sessions#destroy'
 
+  get '/dashboard', to: 'dashboard#show'
+
   resources :users, except: [:destroy]
+
+  resources :resolutions
+
+  resources :goals
 end

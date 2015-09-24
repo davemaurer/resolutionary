@@ -1,0 +1,11 @@
+<div class="fixed">
+  <nav class="top-bar" data-topbar role="navigation" data-options="sticky_on">
+    <section class="top-bar-section">
+      <ul class="buttons-topbar">
+        <li><%= link_to "Logout", logout_path %></li>
+        <li><%= link_to "Profile", user_path(current_user) %></li>
+        <li><%= link_to "Home", dashboard_path %></li>
+      </ul>
+    </section>
+  </nav>
+</div>

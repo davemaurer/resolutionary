@@ -1,16 +1,30 @@
+<link href="http://cdnjs.cloudflare.com/ajax/libs/foundicons/3.0.0/foundation-icons.css" rel="stylesheet">
+
 <header class="hero">
   <h1>
     <div class="title">Resolutionary</div>
     <div class="title-small">The app that will change your life</div>
     <div class="row">
       <div class="small-12 columns">
-        <%= link_to "Login with Twitter", login_path, class: "button button-round" %>
+        <%= link_to login_path do %>
+          <%= content_tag :span, "sign in with twitter", class: "twitter round button split" %>
+          <% end %>
       </div>
     </div>
   </h1>
 </header>
 <footer class="footer">
-  <p class="copywrite">Copywrite Creative License, LLC © 2015</p>
-  <br>
+  <div class="row">
+    <div class="small-12 columns">
+      <p class="slogan">A Resolutionary Concept</p>
+
+      <p class="links">
+        <a href="#">About</a>
+        <a href="#">Faq</a>
+        <a href="#">Contact</a>
+      </p>
+      <p class="copywrite">Copywrite Creative License © 2015</p>
+    </div>
+  </div>
 </footer>
 

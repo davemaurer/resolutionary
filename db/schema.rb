@@ -11,10 +11,27 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150922133425) do
+ActiveRecord::Schema.define(version: 20150923220116) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "goals", force: :cascade do |t|
+    t.string   "name"
+    t.integer  "resolution_id"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+  end
+
+  add_index "goals", ["resolution_id"], name: "index_goals_on_resolution_id", using: :btree
+
+  create_table "resolutions", force: :cascade do |t|
+    t.string   "title"
+    t.text     "description"
+    t.text     "motive_image"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "name"
@@ -26,4 +43,5 @@ ActiveRecord::Schema.define(version: 20150922133425) do
     t.datetime "updated_at",         null: false
   end
 
+  add_foreign_key "goals", "resolutions"
 end

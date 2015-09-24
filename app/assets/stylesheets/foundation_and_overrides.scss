@@ -1486,3 +1486,28 @@ $include-html-global-classes: $include-html-classes;
 // $include-legacy-visibility-classes: true;
 
 @import 'foundation';
+
+@media only screen and (min-width: 48.063em) {
+  .top-bar {
+    text-align: center;
+    background: grey;
+  }
+
+  ul.buttons-topbar {
+    display: inline-block;
+  }
+
+  .top-bar ul li a {
+    background: grey !important;
+  }
+
+  .top-bar-section ul li a:not(.button):hover {
+    color: chartreuse;
+  }
+
+  .top-bar-section ul li a:not(.button) {
+    color: skyblue;
+    font-size: large;
+    font-weight: 500;
+  }
+}
