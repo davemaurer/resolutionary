@@ -13,13 +13,18 @@ gem 'twitter'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'rails_12factor', group: :production
 
-group :development, :test do
+group :development do
   gem 'byebug'
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'
   gem 'better_errors'
-  gem 'capybara'
   gem 'database_cleaner'
   gem 'figaro'
 end
 
+group :test do
+  gem 'rspec-rails'
+  gem 'capybara'
+  gem 'launchy'
+  gem 'webmock'
+end
