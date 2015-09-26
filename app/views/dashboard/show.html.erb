@@ -44,6 +44,7 @@
                 <a href="">Share</a>
                 <%= link_to "Delete", resolution_path(resolution), method: :delete , data: {confirm: "This will remove your resolution. Are you sure?"} %>
                 <%= link_to "Add Goal", new_goal_path %>
+                <%= link_to "Tweet This", resolution_tweets_path(resolution), method: :post %>
             </div>
         </div>
 
