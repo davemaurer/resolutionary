@@ -12,6 +12,6 @@ class TweetsController < ApplicationController
   end
 
   def send_tweet(body:)
-    current_user.twitter_client.update(body)
+    current_user.twitter.update(body)
   end
 end
