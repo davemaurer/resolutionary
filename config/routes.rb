@@ -11,7 +11,9 @@ Rails.application.routes.draw do
 
   resources :users, except: [:destroy]
 
-  resources :resolutions
+  resources :resolutions do
+    resources :tweets, only: [:create]
+  end
 
   resources :goals
 end
