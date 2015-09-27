@@ -1,4 +1,5 @@
 <%= render "partials/topbar" %>
+
 <section class="hero-dashboard">
   <div class="row">
     <div class="large-6 large-push-2 columns">
@@ -15,11 +16,7 @@
 </section>
 
 <div class="row">
-  <!-- Main Feed -->
-  <!-- This has been source ordered to come first in the markup (and on small devices) but to be to the right of the nav on larger screens -->
   <div class="large-8 columns">
-
-    <!-- Feed Entry -->
     <h4><div class="dash4">Resolutions</div></h4>
     <br>
     <% current_user.resolutions.reverse.each do |resolution| %>
@@ -47,30 +44,12 @@
                 <%= link_to "Tweet This", resolution_tweets_path(resolution), method: :post %>
             </div>
         </div>
-
-        <!--<h6>2 Comments</h6>-->
-
-        <!--<div class="row">-->
-          <!--<div class="large-2 columns small-3"><img src="http://placehold.it/50x50&text=[img]"/></div>-->
-          <!--<div class="large-10 columns">-->
-            <!--<p>Bacon ipsum dolor sit amet nulla ham qui sint exercitation eiusmod commodo, chuck duis velit. Aute in-->
-              <!--reprehenderit</p></div>-->
-        <!--</div>-->
-        <!--<div class="row">-->
-          <!--<div class="large-2 columns small-3"><img src="http://placehold.it/50x50&text=[img]"/></div>-->
-          <!--<div class="large-10 columns">-->
-            <!--<p>Bacon ipsum dolor sit amet nulla ham qui sint exercitation eiusmod commodo, chuck duis velit. Aute in-->
-              <!--reprehenderit</p></div>-->
-        <!--</div>-->
       </div>
     </div>
     <br>
     <% end %>
-    <!-- End Feed Entry -->
   </div>
 
-  <!-- Right Sidebar -->
-  <!-- On small devices this column is hidden -->
   <aside class="large-4 columns hide-for-small">
     <h4><div class="dash4">Motivation</div></h4>
     <br>
@@ -86,7 +65,6 @@
 
 </div>
 
-<!-- Footer -->
 
 <footer class="row">
   <div class="large-12 columns">

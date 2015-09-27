@@ -1,6 +1,6 @@
 <%= render "partials/topbar_profile" %>
 
-<div class="hero-profile">
+<section class="hero-profile">
   <h2>Hello, <%= current_user.name %></h2>
-  <%= image_tag current_user.image, size: "110x110", class: "img-circle img-thumbnail" %>
-</div>
+  <%= image_tag current_user.profile_image, size: "110x110", class: "img-circle img-thumbnail" %>
+</section>
