@@ -24,10 +24,12 @@ feature 'User tweets resolution' do
     OmniAuth.config.mock_auth[:twitter] = OmniAuth::AuthHash.new({
       provider: 'twitter',
       uid: '123545',
+      info: {
+        image: "http://placehold.it/100x100",
+      },
       extra: {
         raw_info: {
           name: "David",
-          image: "http://placehold.it/100x100",
         },
       },
       credentials: {
