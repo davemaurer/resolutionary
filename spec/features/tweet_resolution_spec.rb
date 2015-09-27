@@ -27,7 +27,7 @@ feature 'User tweets resolution' do
       extra: {
         raw_info: {
           name: "David",
-          profile_image_url: "http://placehold.it/100x100",
+          image: "http://placehold.it/100x100",
         },
       },
       credentials: {
