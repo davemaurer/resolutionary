@@ -8,7 +8,7 @@ class TweetsController < ApplicationController
   private
 
   def resolution
-    @_resolution ||= Resolution.find(params[:resolution_id])
+    @resolution ||= Resolution.find(params[:resolution_id])
   end
 
   def send_tweet(body:)
