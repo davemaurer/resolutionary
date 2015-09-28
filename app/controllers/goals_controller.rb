@@ -18,11 +18,7 @@ class GoalsController < ApplicationController
     @resolution ||= Resolution.find(params[:resolution_id])
   end
 
-  def goal
-    @goal ||= Goal
-  end
-
   def goal_params
-    params.require(:goals).permit(resolution_id, :name, completed)
+    params.require(:goal).permit(:resolution_id, :name, :completed)
   end
 end

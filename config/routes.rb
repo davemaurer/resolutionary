@@ -13,7 +13,7 @@ Rails.application.routes.draw do
 
   resources :resolutions do
     resources :tweets, only: [:create]
+    resources :goals
   end
 
-  resources :goals
 end
