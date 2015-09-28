@@ -27,21 +27,21 @@
               <span><a href="#" data-reveal-id="myModal"> <%= resolution.title %></a></span>
 
                 <div id="myModal" class="reveal-modal" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
-                  <p class="lead">Details for <%= resolution.title %></p>
-                  <%= resolution.goals.each do |goal| %>
-                    <p>I'm a cool paragraph that lives inside of an even cooler modal. Wins!</p>
-                    <%= goal.name %>
+                  <p class="lead">Goals for <%= resolution.title %></p>
+                  <% resolution.goals.each do |goal| %>
+                    <h5><%= goal.name %>
+                    <%= link_to "Goal met", "#", class: "tiny round button"  %></h5>
                   <% end %>
                   <a class="close-reveal-modal" aria-label="Close">&#215;</a>
                 </div>
                <p><%= resolution.description %></p>
             </div>
-              <div class="action">
+                <div class="action">
                 <%= link_to "Edit", edit_resolution_path(resolution) %>
-                <a href="">Share</a>
                 <%= link_to "Delete", resolution_path(resolution), method: :delete , data: {confirm: "This will remove your resolution. Are you sure?"} %>
                 <%= link_to "Add Goal", new_resolution_goal_path(resolution) %>
                 <%= link_to "Tweet This", resolution_tweets_path(resolution), method: :post %>
+                <%= link_to "Complete!", "#" %>
             </div>
         </div>
       </div>
@@ -64,7 +64,6 @@
   </aside>
 
 </div>
-
 
 <footer class="row">
   <div class="large-12 columns">

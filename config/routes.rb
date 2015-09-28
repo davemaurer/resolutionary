@@ -15,5 +15,4 @@ Rails.application.routes.draw do
     resources :tweets, only: [:create]
     resources :goals
   end
-
 end

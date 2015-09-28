@@ -10,6 +10,7 @@ gem 'jbuilder', '~> 2.0'
 gem 'foundation-rails'
 gem 'omniauth-twitter'
 gem 'twitter'
+gem 'skylight'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'rails_12factor', group: :production
 
