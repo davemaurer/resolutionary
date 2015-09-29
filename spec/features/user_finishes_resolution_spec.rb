@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-feature 'User tweets resolution' do
+feature 'User finishes resolution' do
   scenario 'successfully' do
     stub_twitter_timeline
     user = sign_in_with_twitter
@@ -10,11 +10,11 @@ feature 'User tweets resolution' do
     )
 
     visit dashboard_path
-    tweet_resolution_name
 
-    expect(page).to have_content('Tweeted successfully!')
-    expect_tweet_to_be_posted_to_twitter(
-      body: 'My new resolution is: Get better at testing!',
-    )
+    expect(page).to have_content('Get better at testing')
+
+    click_on('Mark Complete!')
+
+    expect(page).not_to have_content('Get better at testing')
   end
 end

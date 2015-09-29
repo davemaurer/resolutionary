@@ -3,6 +3,10 @@
   <%= form_for([@resolution, @goal]) do |f| %>
     <%= f.label "What is the goal you will use to fulfill your resolution", class: "edit-label" %>
     <%= f.text_field :name %>
-    <%= f.submit "Create", class: "button round medium" %>
+    <% if @goal.id %>
+      <%= f.submit "Edit", class: "button round small", method: :put %>
+    <% else %>
+      <%= f.submit "Create", class: "button round medium" %>
     <% end %>
+  <% end %>
 </div>

@@ -11,8 +11,11 @@ Rails.application.routes.draw do
 
   resources :users, except: [:destroy]
 
+  put '/resolutions/:id/complete', as: :complete, to: 'resolutions#complete'
+
   resources :resolutions do
     resources :tweets, only: [:create]
+    put '/goals/:id/goal_complete', as: :goal_complete, to: 'goals#goal_complete'
     resources :goals
   end
 end

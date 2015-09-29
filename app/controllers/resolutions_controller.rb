@@ -27,7 +27,7 @@ class ResolutionsController < ApplicationController
       flash[:notice] = "Resolution Updated Successfully"
       redirect_to dashboard_path
     else
-      flash[:notice] = "Please try again"
+      flash.now[:notice] = "Please try again"
       render :edit
     end
   end
@@ -39,9 +39,16 @@ class ResolutionsController < ApplicationController
     redirect_to dashboard_path
   end
 
+  def complete
+    resolution = Resolution.find(params[:id])
+    resolution.update(finished: true)
+      flash[:notice] = "Congratulations, your resolution is complete!"
+    redirect_to dashboard_path
+  end
+
   private
 
   def resolution_params
-    params.require(:resolution).permit(:user_id, :title, :description, :motive_image)
+    params.require(:resolution).permit(:user_id, :title, :description, :motive_image, :finished)
   end
 end

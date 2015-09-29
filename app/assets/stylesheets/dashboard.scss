@@ -5,6 +5,10 @@
   margin-bottom: 3rem;
 }
 
+.top-bar {
+  z-index: 10;
+}
+
 .circle-bg {
   margin-top: -2rem;
   text-align: center;
@@ -29,7 +33,7 @@
   @extend .circle-bg;
   background: #333;
   color: #fff;
-  z-index: 9999999;
+  z-index: 9;
   position: relative;
   @media only screen and (min-width: 64.063em) {
     margin-right: 10rem;
@@ -53,17 +57,15 @@
 
   .title {
     line-height: 2rem;
-    font-size: 2.0rem;
   }
   .content {
     padding: 1.3rem;
     line-height: 2rem;
-    font-size: 1.2rem;
     border-radius: 0 0 2px 2px;
   }
   p {
     margin: 0;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     padding-top: .7rem;
   }
   .action {

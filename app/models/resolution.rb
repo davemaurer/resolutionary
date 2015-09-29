@@ -3,4 +3,12 @@ class Resolution < ActiveRecord::Base
 
   has_many :goals
   belongs_to :user
+
+  def self.completed
+    where(finished: true)
+  end
+
+  def self.current
+    where(finished: false)
+  end
 end

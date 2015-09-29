@@ -1,6 +1,12 @@
 require 'rails_helper'
 
 RSpec.describe ResolutionsController, type: :controller do
+  it 'has a #new' do
+    get :new
+
+    expect(response.status).to eq(200)
+  end
+
   it 'creates a resolution' do
     User.create(name: 'David', id: 1, uid: '12345')
     resolution = Resolution.create(title: 'Live Forever',
