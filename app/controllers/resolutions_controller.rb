@@ -42,7 +42,14 @@ class ResolutionsController < ApplicationController
   def complete
     resolution = Resolution.find(params[:id])
     resolution.update(finished: true)
-      flash[:notice] = "Congratulations, your resolution is complete!"
+    flash[:notice] = "Congratulations, your resolution is complete!"
+    redirect_to user_path(current_user)
+  end
+
+  def again
+    resolution = Resolution.find(params[:id])
+    resolution.update(finished: false)
+    flash[:notice] = "Your resolution is now active again"
     redirect_to dashboard_path
   end
 

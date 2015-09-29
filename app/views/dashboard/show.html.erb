@@ -20,38 +20,38 @@
     <h4><div class="dash4">Resolutions</div></h4>
     <br>
     <% current_user.resolutions.current.reverse.each do |resolution| %>
-    <div class="row">
-      <div class="large-12 columns">
-        <div class="card">
-          <div class="content">
+      <div class="row">
+        <div class="large-12 columns">
+          <div class="card">
+            <div class="content">
               <span><a href="#" data-reveal-id="myModal"> <%= resolution.title %></a></span>
 
-                <div id="myModal" class="reveal-modal" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
-                  <p class="lead">Goals for <%= resolution.title %></p>
-                  <% resolution.goals.current_goals.each do |goal| %>
-                    <h5><%= link_to goal.name, edit_resolution_goal_path(resolution, goal) %>
+              <div id="myModal" class="reveal-modal" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
+                <p class="lead">Goals for <%= resolution.title %></p>
+                <% resolution.goals.current_goals.each do |goal| %>
+                  <h5><%= link_to goal.name, edit_resolution_goal_path(resolution, goal) %>
                     <%= link_to "Goal met", resolution_goal_complete_path(resolution, goal), method: :put, class: "tiny round button" %>
                     <%= link_to "Delete", resolution_goal_path(resolution, goal), method: :delete, class: "tiny round button alert" %></h5>
-                  <% end %>
-                  <h5> Completed Goals </h5>
-                  <% resolution.goals.completed_goals.each do |goal| %>
-                    <h5><%= goal.name %></h5>
-                  <% end %>
-                  <a class="close-reveal-modal" aria-label="Close">&#215;</a>
-                </div>
-               <p><%= resolution.description %></p>
+                <% end %>
+                <h5> Completed Goals </h5>
+                <% resolution.goals.completed_goals.each do |goal| %>
+                  <h5><%= goal.name %></h5>
+                <% end %>
+                <a class="close-reveal-modal" aria-label="Close">&#215;</a>
+              </div>
+              <p><%= resolution.description %></p>
             </div>
-                <div class="action">
-                <%= link_to "Edit", edit_resolution_path(resolution) %>
-                <%= link_to "Delete", resolution_path(resolution), method: :delete, data: {confirm: "This will remove your resolution. Are you sure?"} %>
-                <%= link_to "Add Goal", new_resolution_goal_path(resolution) %>
-                <%= link_to "Tweet This", resolution_tweets_path(resolution), method: :post %>
-                <%= link_to "Mark Complete!", complete_path(resolution), method: :put %>
+            <div class="action">
+              <%= link_to "Edit", edit_resolution_path(resolution) %>
+              <%= link_to "Delete", resolution_path(resolution), method: :delete, data: {confirm: "This will remove your resolution. Are you sure?"} %>
+              <%= link_to "Add Goal", new_resolution_goal_path(resolution) %>
+              <%= link_to "Tweet This", resolution_tweets_path(resolution), method: :post %>
+              <%= link_to "Mark Complete!", complete_path(resolution), method: :put %>
             </div>
+          </div>
         </div>
       </div>
-    </div>
-    <br>
+      <br>
     <% end %>
   </div>
 
@@ -60,10 +60,10 @@
     <br>
     <ol>
       <% cache do %>
-      <% current_user.inspirational_tweets.each do |tweet| %>
-        <li><%= tweet.text %></li>
-        <br>
-      <% end %>
+        <% current_user.inspirational_tweets.each do |tweet| %>
+          <li><%= tweet.text %></li>
+          <br>
+        <% end %>
       <% end %>
     </ol>
   </aside>

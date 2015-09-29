@@ -1,5 +1,4 @@
 .hero-profile {
-  background: asset-data-url("inspire-profile-1.jpg") no-repeat center center;
   background-size: cover;
   height: 100%;
   overflow: hidden;
@@ -14,10 +13,14 @@
   right: 0;
   bottom: 0;
   left: 0;
-  background-image: linear-gradient(to bottom, blue, darkblue);
+  background-image: linear-gradient(to bottom, lightblue, blue);
   opacity: .1;
 }
 
 h2 {
-  color: white;
+  color: darkblue;
+}
+
+h3 {
+  color: darkblue;
 }

@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   resources :users, except: [:destroy]
 
   put '/resolutions/:id/complete', as: :complete, to: 'resolutions#complete'
+  put '/resolutions/:id/again', as: :again, to: 'resolutions#again'
 
   resources :resolutions do
     resources :tweets, only: [:create]
