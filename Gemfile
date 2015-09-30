@@ -30,6 +30,5 @@ group :test do
   gem 'launchy'
   gem 'webmock'
   gem 'vcr'
-  gem 'selenium-webdriver'
   gem 'simplecov', :require => false
 end

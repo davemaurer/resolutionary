@@ -9,15 +9,16 @@ Rails.application.routes.draw do
 
   get '/dashboard', to: 'dashboard#show'
 
-  resources :users, except: [:destroy]
+  resources :users, only: [:show]
 
   put '/resolutions/:id/complete', as: :complete, to: 'resolutions#complete'
   put '/resolutions/:id/again', as: :again, to: 'resolutions#again'
 
-  resources :resolutions do
+  resources :resolutions, except: [:index] do
+    resources :reminders, except: [:index]
     resources :tweets, only: [:create]
     put '/goals/:id/goal_complete', as: :goal_complete, to: 'goals#goal_complete'
-    resources :goals
+    resources :goals, except: [:index]
   end
 
   post 'notifications/notify', to: 'notifications#notify'

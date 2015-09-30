@@ -1,7 +1,4 @@
 class GoalsController < ApplicationController
-  def index
-  end
-
   def new
     @resolution = Resolution.find(params[:resolution_id])
     @goal = Goal.new
