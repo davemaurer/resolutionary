@@ -23,6 +23,7 @@
           <%= f.text_field :title %>
           <label for="resolution_description">Reasons - Why are you doing it?</label>
           <%= f.text_area :description %>
+          <br>
           <% if @resolution.id %>
             <%= f.submit "Edit", class: "button round small", method: :put %>
           <%else %>

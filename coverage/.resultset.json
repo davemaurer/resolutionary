@@ -293,6 +293,8 @@
         1,
         1,
         null,
+        null,
+        1,
         null
       ],
       "/Users/davidmaurer/rails/turing_projects/resolutionary/app/helpers/application_helper.rb": [
@@ -806,6 +808,6 @@
         null
       ]
     },
-    "timestamp": 1443583754
+    "timestamp": 1443625654
   }
 }
