@@ -1,9 +1,9 @@
 .hero-profile {
+  background: asset-data-url("lightbulbsswitchedon.jpg") no-repeat center center;
   background-size: cover;
-  height: 100%;
-  overflow: hidden;
-  padding-top: 10px;
-  padding-left: 20px;
+  height: 50vh;
+  margin-bottom: 3rem;
+  margin-top: -4rem;
 }
 
 .hero-profile:before {

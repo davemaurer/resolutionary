@@ -2,36 +2,39 @@
 
 <section class="hero-profile">
   <div class="row">
-    <div class="large-12 columns">
-      <h2>Hello, <%= current_user.name %></h2>
-      <%= image_tag src=current_user[:profile_image], size: "110x110" %>
-      <br>
-      <h3>Victories</h3>
-      <br>
+    <div class="large-6 large-push-2 columns">
     </div>
   </div>
-  <% current_user.resolutions.completed.reverse.each do |resolution| %>
-    <div class="row">
-      <div class="large-12 columns">
-        <div class="card">
-          <div class="content">
-            <span><a href="#" data-reveal-id="myModal"> <%= resolution.title %></a></span>
+</section>
 
-            <div id="myModal" class="reveal-modal" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
-              <p class="lead">Goals completed for <%= resolution.title %></p>
-              <% resolution.goals.each do |goal| %>
-                <h5><%= goal.name %></h5>
-              <% end %>
-              <a class="close-reveal-modal" aria-label="Close">&#215;</a>
-            </div>
-            <p><%= resolution.description %></p>
+<div class="row">
+  <div class="large-12 columns">
+    <h2>Hello, <%= current_user.name %>. Here are your Victories.</h2>
+    <%= image_tag src=current_user[:profile_image], size: "110x110" %>
+    <br>
+  </div>
+</div>
+<% current_user.resolutions.completed.reverse.each do |resolution| %>
+  <div class="row">
+    <div class="large-12 columns">
+      <div class="card">
+        <div class="content">
+          <span><a href="#" data-reveal-id="myModal"> <%= resolution.title %></a></span>
+
+          <div id="myModal" class="reveal-modal" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
+            <p class="lead">Goals completed for <%= resolution.title %></p>
+            <% resolution.goals.each do |goal| %>
+              <h5><%= goal.name %></h5>
+            <% end %>
+            <a class="close-reveal-modal" aria-label="Close">&#215;</a>
           </div>
-          <div class="action">
-            <%= link_to "Do this again!", again_path(resolution), method: :put %>
-          </div>
+          <p><%= resolution.description %></p>
+        </div>
+        <div class="action">
+          <%= link_to "Do this again!", again_path(resolution), method: :put %>
         </div>
       </div>
     </div>
-    <br>
-  <% end %>
-</section>
+  </div>
+  <br>
+<% end %>

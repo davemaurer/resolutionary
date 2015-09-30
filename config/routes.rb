@@ -19,4 +19,6 @@ Rails.application.routes.draw do
     put '/goals/:id/goal_complete', as: :goal_complete, to: 'goals#goal_complete'
     resources :goals
   end
+
+  post 'notifications/notify', to: 'notifications#notify'
 end

@@ -1,12 +1,33 @@
+<section class="hero-dashboard">
+  <div class="row">
+    <div class="large-6 large-push-2 columns">
+      <div class="circle-bg quote-1">
+        <p>Make a goal.</p>
+      </div>
+    </div>
+    <div class="large-6 large-pull-2 columns">
+      <div class="circle-bg quote-2">
+        <p>Then go after it.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <br>
 <div class="large-6 large-centered columns">
-  <%= form_for([@resolution, @goal]) do |f| %>
-    <%= f.label "What is the goal you will use to fulfill your resolution", class: "edit-label" %>
-    <%= f.text_field :name %>
-    <% if @goal.id %>
-      <%= f.submit "Edit", class: "button round small", method: :put %>
-    <% else %>
-      <%= f.submit "Create", class: "button round medium" %>
-    <% end %>
-  <% end %>
+  <div class="card">
+    <div class="content">
+      <div class="form-card">
+        <%= form_for([@resolution, @goal]) do |f| %>
+          <%= f.label "What is the goal you will use to fulfill your resolution", class: "edit-label" %>
+          <%= f.text_field :name %>
+          <% if @goal.id %>
+            <%= f.submit "Edit", class: "button round small", method: :put %>
+          <% else %>
+            <%= f.submit "Create", class: "button round medium" %>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+  </div>
 </div>
