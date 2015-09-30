@@ -10,10 +10,13 @@ class ResolutionsController < ApplicationController
   end
 
   def create
-    if current_user
-      current_user.resolutions.where(resolution_params).first_or_create
+    @resolution = current_user.resolutions.where(resolution_params).first_or_create
+    if current_user && @resolution.save
       flash[:notice] = "Resolution created!"
       redirect_to dashboard_path
+    else
+      flash.now[:notice] = "Please try again"
+      render :new
     end
   end
 
@@ -22,8 +25,8 @@ class ResolutionsController < ApplicationController
   end
 
   def update
-    resolution = Resolution.find(params[:id])
-    if resolution.update(resolution_params)
+    @resolution = Resolution.find(params[:id])
+    if @resolution.update(resolution_params)
       flash[:notice] = "Resolution Updated Successfully"
       redirect_to dashboard_path
     else
@@ -35,7 +38,6 @@ class ResolutionsController < ApplicationController
   def destroy
     resolution = Resolution.find(params[:id])
     resolution.destroy
-    flash[:notice] = "Resolution is gone forever!"
     redirect_to dashboard_path
   end
 

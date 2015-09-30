@@ -19,8 +19,10 @@ feature 'User finishes resolution' do
 
     expect(page).to have_content('Get better at testing')
 
-    click_on('Home')
+    click_on('Do this again!')
 
-    expect(page).not_to have_content('Get better at testing')
+    expect(current_path).to eq(dashboard_path)
+    expect(page).to have_content('Get better at testing')
+    expect(page).to have_content('Your resolution is now active again')
   end
 end

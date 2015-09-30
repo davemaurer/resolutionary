@@ -1,11 +1,11 @@
 <br>
 <div class="large-6 large-centered columns">
   <%= form_for(@resolution, multiplart: true) do |f| %>
-    <%= f.label "resolution - What do you want to accomplish?", class: "edit-label" %>
+    <label for="resolution_title">Resolution</label>
     <%= f.text_field :title %>
-    <%= f.label "reasons - Why are you doing it?", class: "edit-label" %>
+    <label for="resolution_description">Reasons - Why are you doing it?</label>
     <%= f.text_area :description %>
-    <%= f.label "picture", class: "edit-label" %>
+    <%= f.label "Picture", class: "image-label" %>
     <%= f.file_field :motive_image %>
     <% if @resolution.id %>
       <%= f.submit "Edit", class: "button round small", method: :put %>

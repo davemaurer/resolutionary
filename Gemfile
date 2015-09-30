@@ -21,6 +21,7 @@ group :development do
   gem 'better_errors'
   gem 'database_cleaner'
   gem 'figaro'
+  gem 'twilio-ruby', '~> 3.12'
 end
 
 group :test do
@@ -29,5 +30,6 @@ group :test do
   gem 'launchy'
   gem 'webmock'
   gem 'vcr'
+  gem 'selenium-webdriver'
   gem 'simplecov', :require => false
 end
