@@ -42,11 +42,12 @@
               <p><%= resolution.description %></p>
             </div>
             <div class="action">
-              <%= link_to "Edit", edit_resolution_path(resolution) %>
-              <%= link_to "Delete", resolution_path(resolution), method: :delete, data: {confirm: "This will remove your resolution. Are you sure?"} %>
-              <%= link_to "Add Goal", new_resolution_goal_path(resolution) %>
-              <%= link_to "Tweet This", resolution_tweets_path(resolution), method: :post %>
-              <%= link_to "Mark Complete!", complete_path(resolution), method: :put %>
+              <%= link_to "Edit", edit_resolution_path(resolution), class: "link" %>
+              <%= link_to "Delete", resolution_path(resolution), method: :delete, data: {confirm: "This will remove your resolution. Are you sure?"}, class: "link" %>
+              <%= link_to "Add Goal", new_resolution_goal_path(resolution), class: "link" %>
+              <%= link_to "Tweet This", resolution_tweets_path(resolution), method: :post, class: "link" %>
+              <%= link_to "Reminder", new_resolution_reminder_path(resolution), class: "link" %>
+              <%= link_to "Mark Complete!", complete_path(resolution), method: :put, class: "link" %>
             </div>
           </div>
         </div>

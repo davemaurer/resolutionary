@@ -2,12 +2,12 @@
   <div class="row">
     <div class="large-6 large-push-2 columns">
       <div class="circle-bg quote-1">
-        <p>Make a goal.</p>
+        <p>Remind yourself what.</p>
       </div>
     </div>
     <div class="large-6 large-pull-2 columns">
       <div class="circle-bg quote-2">
-        <p>Then go after it.</p>
+        <p>Think about why.</p>
       </div>
     </div>
   </div>
@@ -17,15 +17,11 @@
   <div class="card">
     <div class="content">
       <div class="form-card">
-        <%= form_for([@resolution, @goal]) do |f| %>
-          <%= f.label "What is the goal you will use to fulfill your resolution", class: "edit-label" %>
-          <%= f.text_field :name %>
+        <%= form_for([@resolution, @reminder]) do |f| %>
+          <label for="phone">Your phone number</label>
+          <%= f.text_field :phone_number %>
           <br>
-          <% if @goal.id %>
-            <%= f.submit "Edit", class: "button round small", method: :put %>
-          <% else %>
-            <%= f.submit "Create", class: "button round medium" %>
-          <% end %>
+          <%= f.submit "Create Reminder", class: "button round medium" %>
         <% end %>
       </div>
     </div>
