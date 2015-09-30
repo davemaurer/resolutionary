@@ -9,7 +9,7 @@ class Reminder < ActiveRecord::Base
     @twilio_number = ENV['TWILIO_NUMBER']
     @client = Twilio::REST::Client.new ENV['TWILIO_ACCOUNT_SID'], ENV['TWILIO_AUTH_TOKEN']
     reminder = "Hi #{recipient.name}. You made a resolution to #{resolution.title}. Get on it!"
-    @client.messages.create(
+    @client.account.messages.create(
                             from: @twilio_number,
                             to: self.phone_number,
                             body: reminder

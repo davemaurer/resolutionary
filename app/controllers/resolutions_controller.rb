@@ -37,6 +37,12 @@ class ResolutionsController < ApplicationController
 
   def destroy
     resolution = Resolution.find(params[:id])
+    resolution.goals.each do |goal|
+      goal.destroy
+    end
+    resolution.reminders.each do |reminder|
+      reminder.destroy
+    end
     resolution.destroy
     redirect_to dashboard_path
   end
