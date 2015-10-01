@@ -14,6 +14,7 @@ gem 'twitter'
 gem 'skylight'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'rails_12factor', group: :production
+gem 'twilio-ruby', '~> 3.12'
 
 group :development do
   gem 'byebug'
@@ -22,7 +23,6 @@ group :development do
   gem 'better_errors'
   gem 'database_cleaner'
   gem 'figaro'
-  gem 'twilio-ruby', '~> 3.12'
 end
 
 group :test do
