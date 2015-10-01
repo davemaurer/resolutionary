@@ -16,8 +16,8 @@ class User < ActiveRecord::Base
     TwitterService.twitter_client(oath_token, oauth_token_secret)
   end
 
-  def background_picture
-    twitter.user.profile_background_image_url_https
+  def picture
+    twitter.user.profile_image_url_https
   end
 
   def inspirational_tweets

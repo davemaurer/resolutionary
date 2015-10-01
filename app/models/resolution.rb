@@ -12,4 +12,12 @@ class Resolution < ActiveRecord::Base
   def self.current
     where(finished: false)
   end
+
+  def completed_goals
+    goals.completed_goals
+  end
+
+  def current_goals
+    goals.current_goals
+  end
 end

@@ -1,16 +1,11 @@
 <%= render "partials/topbar_profile" %>
 
 <section class="hero-profile">
-  <div class="row">
-    <div class="large-6 large-push-2 columns">
-    </div>
-  </div>
 </section>
 
 <div class="row">
   <div class="large-12 columns">
     <h4><div class="dash4">Hello, <%= current_user.name %>. Here are your Victories.</div></h4>
-    <%= image_tag src=current_user[:profile_image], size: "110x110" %>
     <br>
   </div>
 </div>

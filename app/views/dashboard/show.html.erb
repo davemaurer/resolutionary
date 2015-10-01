@@ -28,13 +28,13 @@
 
               <div id="myModal" class="reveal-modal" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
                 <p class="lead">Goals for <%= resolution.title %></p>
-                <% resolution.goals.current_goals.each do |goal| %>
+                <% resolution.current_goals.each do |goal| %>
                   <h5><%= link_to goal.name, edit_resolution_goal_path(resolution, goal) %>
                     <%= link_to "Goal met", resolution_goal_complete_path(resolution, goal), method: :put, class: "tiny round button" %>
                     <%= link_to "Delete", resolution_goal_path(resolution, goal), method: :delete, class: "tiny round button alert" %></h5>
                 <% end %>
                 <h5> Completed Goals </h5>
-                <% resolution.goals.completed_goals.each do |goal| %>
+                <% resolution.completed_goals.each do |goal| %>
                   <h5><%= goal.name %></h5>
                 <% end %>
                 <a class="close-reveal-modal" aria-label="Close">&#215;</a>

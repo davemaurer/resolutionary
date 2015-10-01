@@ -3,24 +3,5 @@
   background-size: cover;
   height: 50vh;
   margin-bottom: 3rem;
-  margin-top: -4rem;
-}
-
-.hero-profile:before {
-  content: '';
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  background-image: linear-gradient(to bottom, lightblue, blue);
-  opacity: .1;
-}
-
-h2 {
-  color: darkblue;
-}
-
-h3 {
-  color: darkblue;
+  margin-top: -1rem;
 }

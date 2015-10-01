@@ -1,0 +1,11 @@
+<link href="http://cdnjs.cloudflare.com/ajax/libs/foundicons/3.0.0/foundation-icons.css" rel="stylesheet">
+<% flash.each do |name, msg| %>
+  <div class="row">
+    <div class="small-6 columns small-centered">
+      <div data-alert class="alert-box round <%= name.to_s == 'notice' ? 'success' : 'alert' %>">
+        <i class="fi-eye"></i><%= msg %>
+        <a href="#" class="close">&CircleTimes;</a>
+      </div>
+    </div>
+  </div>
+<% end %>
