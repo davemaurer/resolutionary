@@ -5,9 +5,14 @@ class GoalsController < ApplicationController
   end
 
   def create
-    resolution.goals.where(goal_params).first_or_create
-    flash[:notice] = "Goal created for #{resolution.title}"
-    redirect_to dashboard_path
+    goal = resolution.goals.where(goal_params).first_or_create
+    if goal.save
+      flash[:notice] = "Goal created for #{resolution.title}"
+      redirect_to dashboard_path
+    else
+      flash[:notice] = "Please try again"
+      redirect_to dashboard_path
+    end
   end
 
   def edit
@@ -21,8 +26,8 @@ class GoalsController < ApplicationController
       flash[:notice] = "Goal Updated Successfully"
       redirect_to dashboard_path
     else
-      flash.now[:notice] = "Please try again"
-      render :edit
+      flash[:notice] = "Please try again"
+      redirect_to dashboard_path
     end
   end
 

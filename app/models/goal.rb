@@ -1,4 +1,6 @@
 class Goal < ActiveRecord::Base
+  validates_presence_of :name
+
   belongs_to :resolution
 
   def self.completed_goals

@@ -19,7 +19,7 @@
   <div class="large-8 columns">
     <h4><div class="dash4">Resolutions</div></h4>
     <br>
-    <% current_user.resolutions.current.reverse.each do |resolution| %>
+    <% @resolutions.each do |resolution| %>
       <div class="row">
         <div class="large-12 columns">
           <div class="card">

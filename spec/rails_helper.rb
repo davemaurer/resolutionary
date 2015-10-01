@@ -14,7 +14,6 @@ VCR.configure do |config|
   config.hook_into :webmock
   config.allow_http_connections_when_no_cassette = true
   config.before_record do |r|
-    r.request.headers.delete("Authorization")
   end
 end
 
@@ -70,10 +69,6 @@ RSpec.configure do |config|
 
   config.before(:each) do
     DatabaseCleaner.strategy = :transaction
-  end
-
-  config.before(:each, :js => true) do
-    DatabaseCleaner.strategy = :truncation
   end
 
   config.before(:each) do

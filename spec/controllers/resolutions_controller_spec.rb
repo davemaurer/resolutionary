@@ -32,9 +32,10 @@ RSpec.describe ResolutionsController, type: :controller do
 
   it 'deletes a resolution' do
     User.create(name: 'David', id: 1, uid: '12345')
-    resolution = Resolution.create(title: 'Live Forever',
+    Resolution.create(title: 'Live Forever',
                                    description: 'So I can see the end of the universe',
                                    user_id: 1)
+    resolution = Resolution.find_by(user_id: 1)
 
     expect(Resolution.all.count).to eq(1)
 

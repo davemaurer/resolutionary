@@ -14,10 +14,10 @@ class Resolution < ActiveRecord::Base
   end
 
   def completed_goals
-    goals.completed_goals
+    self.goals.completed_goals
   end
 
   def current_goals
-    goals.current_goals
+    self.goals.current_goals
   end
 end

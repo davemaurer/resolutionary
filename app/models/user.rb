@@ -16,11 +16,15 @@ class User < ActiveRecord::Base
     TwitterService.twitter_client(oath_token, oauth_token_secret)
   end
 
-  def picture
-    twitter.user.profile_image_url_https
-  end
-
   def inspirational_tweets
     twitter.search("#motivation -rt").first(10)
+  end
+
+  def current_resolutions
+    self.resolutions.current.reverse
+  end
+
+  def completed_resolutions
+    self.resolutions.completed.reverse
   end
 end
