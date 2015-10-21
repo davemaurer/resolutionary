@@ -1,6 +1,6 @@
 @mixin vertical-align {
   position: relative;
-  top: 60%;
+  top: 50%;
   -webkit-transform: translateY(-50%);
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
@@ -13,7 +13,7 @@ $icon-size: 2rem;
 .hero {
   background: asset-data-url("resolution-1.jpg") no-repeat center center;
   background-size: cover;
-  height: 60vh;
+  height: 100%;
   overflow: hidden;
   .title {
     font-size: 3.5rem;
@@ -76,10 +76,14 @@ $icon-size: 2rem;
 }
 
 .footer {
-  background-color: #292c2f;
+  position: fixed;
+  background-color: transparent;
   text-align: center;
   font-size: 1.2rem;
-  padding: 2rem;
+  padding: 1rem;
+  bottom: 0;
+  width: 100%;
+
   p {
     &.slogan {
       color: #8d9093;
