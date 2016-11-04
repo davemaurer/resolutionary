@@ -27,4 +27,8 @@ class User < ActiveRecord::Base
   def completed_resolutions
     self.resolutions.completed.reverse
   end
+
+  def forgotten_resolutions
+    self.resolutions.forgotten
+  end
 end

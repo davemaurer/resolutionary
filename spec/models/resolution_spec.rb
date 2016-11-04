@@ -11,6 +11,7 @@ describe Resolution, ".forgotten" do
       resolution.update_attributes(updated_at: 31.days.ago)
       expect(Resolution.forgotten).to eq([resolution])
     end
+
     it "does not return resolutions younger than 30 days" do
       expect(Resolution.forgotten).to be_empty
     end

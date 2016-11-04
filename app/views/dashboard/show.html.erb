@@ -18,6 +18,13 @@
 <div class="row">
   <div class="large-8 columns">
     <h4><div class="dash4">Resolutions</div></h4>
+    <% unless @forgotten.empty? %>
+      <div class="forgotten">The following Resolutions have no changes for the past 30 days!:
+      <% @forgotten.each do |resolution| %>
+        <li><%= resolution.title %></li>
+      <% end %>
+      </div>
+    <% end %>
     <br>
     <% @resolutions.each do |resolution| %>
       <div class="row">
@@ -39,6 +46,7 @@
                 <% end %>
                 <a class="close-reveal-modal" aria-label="Close">&#215;</a>
               </div>
+
               <p><%= resolution.description %></p>
             </div>
             <div class="action">
