@@ -21,14 +21,14 @@ class User < ActiveRecord::Base
   end
 
   def current_resolutions
-    self.resolutions.current.reverse
+    resolutions.current.reverse
   end
 
   def completed_resolutions
-    self.resolutions.completed.reverse
+    resolutions.completed.reverse
   end
 
   def forgotten_resolutions
-    self.resolutions.forgotten
+    resolutions.forgotten
   end
 end
