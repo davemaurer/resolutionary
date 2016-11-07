@@ -19,20 +19,24 @@ class Resolution < ActiveRecord::Base
   end
 
   def self.empty_old_resolutions
-    where("updated_at < '#{FORGOTTEN_THRESHOLD}'")
+    resolutions_with_no_goals - ("updated_at < '#{FORGOTTEN_THRESHOLD}'")
+  end
+
+  def self.resolutions_with_no_goals
+    joins(:goals).where(goals: {id: nil})
   end
 
   def self.resolutions_with_only_inactive_goals
-    Resolution
+    self
       .joins(:goals)
       .where("goals.updated_at < '#{FORGOTTEN_THRESHOLD}'")
   end
 
   def completed_goals
-    self.goals.completed_goals
+    goals.completed_goals
   end
 
   def current_goals
-    self.goals.current_goals
+    goals.current_goals
   end
 end
