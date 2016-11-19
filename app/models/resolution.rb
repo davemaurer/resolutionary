@@ -18,6 +18,7 @@ class Resolution < ActiveRecord::Base
     empty_old_resolutions | resolutions_with_only_inactive_goals
   end
 
+  # Return only resolutions that haven't been changed in over 30 days (created_at) AND have no goals
   def self.empty_old_resolutions
     resolutions_with_no_goals - ("updated_at < '#{FORGOTTEN_THRESHOLD}'")
   end
